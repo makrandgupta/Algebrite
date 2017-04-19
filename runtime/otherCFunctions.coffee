@@ -24,14 +24,14 @@ doubleToReasonableString = (d) ->
 
 	# remove trailing zeroes beyond decimal point and
 	# gives at most 6 digits after the point
-	stringRepresentation = "" + parseFloat(d.toPrecision(20))
+	stringRepresentation = "" + parseFloat(d.toPrecision(12))
 
 	# we actually want to give a hint to user that
 	# it's a double, so add a trailing ".0" if there
 	# is no decimal point
 	if stringRepresentation.indexOf(".") == -1 
 		stringRepresentation += ".0"
-	if stringRepresentation.search("e") == -1 && stringRepresentation.length > 15
+	if stringRepresentation.search("e") == -1 && stringRepresentation.length > 14
 		stringRepresentation = parseInt(stringRepresentation).toExponential()
 
 	return String(stringRepresentation)
