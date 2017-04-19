@@ -429,6 +429,7 @@ convert_rational_to_double = (p) ->
 
 	return result
 
+
 # n an integer
 push_integer = (n) ->
 	if DEBUG then console.log "pushing integer " + n
